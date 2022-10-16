@@ -216,6 +216,31 @@ canvas.create_text(
     font=("Montserrat Regular", 11 * -1)
 )
 
+# ----- Username Input - TextBox ----- #
+username_input_image = PhotoImage(
+    file=relative_to_assets("login/username_input.png"))
+username_input_bg = canvas.create_image(
+    400.5,
+    250.0,
+    image=username_input_image
+)
+username_input = Entry(
+    bd=0,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1)
+)
+username_input.insert(0, "Username")
+username_input.place(
+    x=298.0,
+    y=234.0,
+    width=205.0,
+    height=30.0
+)
+
 # ----- Password Input - TextBox ----- #
 password_input_image = PhotoImage(
     file=relative_to_assets("login/password_input.png"))
@@ -234,33 +259,10 @@ password_input = Entry(
     font=("Montserrat Regular", 14 * -1),
     show="*"
 )
+password_input.insert(0, "password")
 password_input.place(
     x=298.0,
     y=278.0,
-    width=205.0,
-    height=30.0
-)
-
-# ----- Username Input - TextBox ----- #
-username_input_image = PhotoImage(
-    file=relative_to_assets("login/username_input.png"))
-username_input_bg = canvas.create_image(
-    400.5,
-    250.0,
-    image=username_input_image
-)
-username_input = Entry(
-    bd=0,
-    bg="#28272E",
-    highlightthickness=0,
-    fg="#d5d5d5",
-    insertbackground="#d5d5d5",
-    justify='center',
-    font=("Montserrat Regular", 14 * -1)
-)
-username_input.place(
-    x=298.0,
-    y=234.0,
     width=205.0,
     height=30.0
 )
