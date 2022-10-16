@@ -40,12 +40,12 @@ canvas = Canvas(
 
 # ----- Canvas Background ----- #
 canvas.place(x = 0, y = 0)
-image_image_1 = PhotoImage(
-    file=relative_to_assets("register/image_1.png"))
-image_1 = canvas.create_image(
+background_image = PhotoImage(
+    file=relative_to_assets("register/background.png"))
+background = canvas.create_image(
     400.0,
     200.0,
-    image=image_image_1
+    image=background_image
 )
 
 # ----- Back Button - Button ----- #
@@ -300,52 +300,58 @@ email_input.place(
     height=30.0
 )
 
-image_image_2 = PhotoImage(
-    file=relative_to_assets("register/image_2.png"))
-image_2 = canvas.create_image(
+# ----- Register Account - Heading ----- #
+main_heading_image = PhotoImage(
+    file=relative_to_assets("register/main_heading.png"))
+main_heading = canvas.create_image(
     398.0,
     56.0,
-    image=image_image_2
+    image=main_heading_image
 )
 
-image_image_3 = PhotoImage(
-    file=relative_to_assets("register/image_3.png"))
-image_3 = canvas.create_image(
+# ----- Username - Heading ----- #
+username_heading_image = PhotoImage(
+    file=relative_to_assets("register/username_heading.png"))
+username_heading = canvas.create_image(
     274.0,
     109.0,
-    image=image_image_3
+    image=username_heading_image
 )
 
-image_image_4 = PhotoImage(
-    file=relative_to_assets("register/image_4.png"))
-image_4 = canvas.create_image(
+# ----- Password - Heading ----- #
+password_heading_image = PhotoImage(
+    file=relative_to_assets("register/password_heading.png"))
+password_heading = canvas.create_image(
     527.0,
     109.0,
-    image=image_image_4
+    image=password_heading_image
 )
 
-image_image_5 = PhotoImage(
-    file=relative_to_assets("register/image_5.png"))
-image_5 = canvas.create_image(
-    527.0,
-    193.0,
-    image=image_image_5
-)
-
-image_image_6 = PhotoImage(
-    file=relative_to_assets("register/image_6.png"))
-image_6 = canvas.create_image(
-    403.0,
-    276.0,
-    image=image_image_6
-)
-
-image_image_7 = PhotoImage(
-    file=relative_to_assets("register/image_7.png"))
-image_7 = canvas.create_image(
+# ----- First Name - Heading ----- #
+firstname_heading_image = PhotoImage(
+    file=relative_to_assets("register/firstname_heading.png"))
+firstname_heading = canvas.create_image(
     275.0,
     193.0,
-    image=image_image_7
+    image=firstname_heading_image
+)
+
+# ----- Last Name - Heading ----- #
+lastname_heading_image = PhotoImage(
+    file=relative_to_assets("register/lastname_heading.png"))
+lastname_heading = canvas.create_image(
+    527.0,
+    193.0,
+    image=lastname_heading_image
+)
+
+# ----- E-Mail - Heading ----- #
+email_heading_image = PhotoImage(
+    file=relative_to_assets("register/email_heading.png"))
+email_heading = canvas.create_image(
+    403.0,
+    276.0,
+    image=email_heading_image
 )
 window.resizable(False, False)
 window.mainloop()
