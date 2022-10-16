@@ -8,6 +8,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from PIL import Image, ImageTk
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -49,10 +50,23 @@ background = canvas.create_image(
 )
 
 # ----- Register Button - Button ----- #
+
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    login_register_button_image = PhotoImage(file=relative_to_assets("login_register_button-active.png"))
+    login_register_button.config(image=login_register_button_image)
+    login_register_button.image = login_register_button_image
+
+def on_leave(e):
+    login_register_button_image = PhotoImage(file=relative_to_assets("login_register_button.png"))
+    login_register_button.config(image=login_register_button_image)
+    login_register_button.image = login_register_button_image
+
 login_register_button_image = PhotoImage(
     file=relative_to_assets("login_register_button.png"))
 login_register_button = Button(
     image=login_register_button_image,
+    cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
     command=lambda: print("Register Button clicked"),
@@ -64,12 +78,28 @@ login_register_button.place(
     width=105.0,
     height=32.0
 )
+# -- Bind the enter + leave events
+login_register_button.bind("<Enter>", on_enter)
+login_register_button.bind("<Leave>", on_leave)
 
 # ----- Login Button - Button ----- #
+
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    login_login_button_image = PhotoImage(file=relative_to_assets("login_login_button-active.png"))
+    login_login_button.config(image=login_login_button_image)
+    login_login_button.image = login_login_button_image
+
+def on_leave(e):
+    login_login_button_image = PhotoImage(file=relative_to_assets("login_login_button.png"))
+    login_login_button.config(image=login_login_button_image)
+    login_login_button.image = login_login_button_image    
+
 login_login_button_image = PhotoImage(
     file=relative_to_assets("login_login_button.png"))
 login_login_button = Button(
     image=login_login_button_image,
+    cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
     command=lambda: print("Login Button clicked"),
@@ -81,6 +111,41 @@ login_login_button.place(
     width=105.0,
     height=32.0
 )
+# -- Bind the enter + leave events
+login_login_button.bind("<Enter>", on_enter)
+login_login_button.bind("<Leave>", on_leave)
+
+# ----- Reset Password - Button ----- #
+
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    login_reset_button_image = PhotoImage(file=relative_to_assets("login_reset_button-active.png"))
+    login_reset_button.config(image=login_reset_button_image)
+    login_reset_button.image = login_reset_button_image
+
+def on_leave(e):
+    login_reset_button_image = PhotoImage(file=relative_to_assets("login_reset_button.png"))
+    login_reset_button.config(image=login_reset_button_image)
+    login_reset_button.image = login_reset_button_image 
+login_reset_button_image = PhotoImage(
+    file=relative_to_assets("login_reset_button.png"))
+login_reset_button = Button(
+    image=login_reset_button_image,
+    cursor="hand2",
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("Reset Password Button clicked"),
+    relief="flat"
+)
+login_reset_button.place(
+    x=293.0,
+    y=361.0,
+    width=215.0,
+    height=32.0
+)
+# -- Bind the enter + leave events
+login_reset_button.bind("<Enter>", on_enter)
+login_reset_button.bind("<Leave>", on_leave)
 
 # ----- Version + Detection Headings - Text ----- #
 canvas.create_text(
@@ -189,23 +254,6 @@ login_username_input.place(
     y=234.0,
     width=205.0,
     height=30.0
-)
-
-# ----- Reset Password - Button ----- #
-login_reset_button_image = PhotoImage(
-    file=relative_to_assets("login_reset_button.png"))
-login_reset_button = Button(
-    image=login_reset_button_image,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("Reset Password Button clicked"),
-    relief="flat"
-)
-login_reset_button.place(
-    x=293.0,
-    y=361.0,
-    width=215.0,
-    height=32.0
 )
 
 # ----- Heading - Image ----- #
