@@ -188,14 +188,15 @@ canvas.create_text(
     font=("Montserrat Regular", 11 * -1)
 )
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("reset/entry_1.png"))
-entry_bg_1 = canvas.create_image(
+# ----- Username Input - TextBox ----- #
+username_input_image = PhotoImage(
+    file=relative_to_assets("reset/username_input.png"))
+username_input_bg = canvas.create_image(
     398.5,
     135.0,
-    image=entry_image_1
+    image=username_input_image
 )
-entry_1 = Entry(
+username_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -204,21 +205,22 @@ entry_1 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_1.place(
+username_input.place(
     x=296.0,
     y=119.0,
     width=205.0,
     height=30.0
 )
 
-entry_image_2 = PhotoImage(
-    file=relative_to_assets("reset/entry_2.png"))
-entry_bg_2 = canvas.create_image(
+# ----- Old Password Input - TextBox ----- #
+old_password_input_image = PhotoImage(
+    file=relative_to_assets("reset/old_password_input.png"))
+old_password_input_bg = canvas.create_image(
     397.5,
     220.0,
-    image=entry_image_2
+    image=old_password_input_image
 )
-entry_2 = Entry(
+old_password_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -228,21 +230,22 @@ entry_2 = Entry(
     font=("Montserrat Regular", 14 * -1),
     show="*"
 )
-entry_2.place(
+old_password_input.place(
     x=295.0,
     y=204.0,
     width=205.0,
     height=30.0
 )
 
-entry_image_3 = PhotoImage(
-    file=relative_to_assets("reset/entry_3.png"))
-entry_bg_3 = canvas.create_image(
+# ----- New Password Input - TextBox ----- #
+new_password_input_image = PhotoImage(
+    file=relative_to_assets("reset/new_password_input.png"))
+new_password_input_bg = canvas.create_image(
     398.5,
     305.0,
-    image=entry_image_3
+    image=new_password_input_image
 )
-entry_3 = Entry(
+new_password_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -252,7 +255,7 @@ entry_3 = Entry(
     font=("Montserrat Regular", 14 * -1),
     show="*"
 )
-entry_3.place(
+new_password_input.place(
     x=296.0,
     y=289.0,
     width=205.0,
