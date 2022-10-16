@@ -84,7 +84,7 @@ back_button.place(
 back_button.bind("<Enter>", on_enter)
 back_button.bind("<Leave>", on_leave)
 
-# ----- Back Button - Button ----- #
+# ----- Register Button - Button ----- #
 # -- Define the mouse enter and leave events
 def on_enter(e):
     register_button_image = PhotoImage(file=relative_to_assets("register/register_button-active.png"))
@@ -280,8 +280,8 @@ lastname_input.place(
 email_input_image = PhotoImage(
     file=relative_to_assets("register/email_input.png"))
 email_input_bg = canvas.create_image(
-    399.5,
-    308.0,
+    274.5,
+    305.0,
     image=email_input_image
 )
 email_input = Entry(
@@ -294,8 +294,32 @@ email_input = Entry(
     font=("Montserrat Regular", 14 * -1)
 )
 email_input.place(
-    x=297.0,
-    y=292.0,
+    x=170.0,
+    y=289.0,
+    width=205.0,
+    height=30.0
+)
+
+# ----- Discord Name - TextBox ----- #
+discord_input_image = PhotoImage(
+    file=relative_to_assets("register/discord_input.png"))
+discord_input_bg = canvas.create_image(
+    526.5,
+    305.0,
+    image=discord_input_image
+)
+discord_input = Entry(
+    bd=0,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1)
+)
+discord_input.place(
+    x=424.0,
+    y=289.0,
     width=205.0,
     height=30.0
 )
@@ -349,9 +373,18 @@ lastname_heading = canvas.create_image(
 email_heading_image = PhotoImage(
     file=relative_to_assets("register/email_heading.png"))
 email_heading = canvas.create_image(
-    403.0,
-    276.0,
+    272.0,
+    272.0,
     image=email_heading_image
+)
+
+# ----- Discord - Heading ----- #
+discord_heading_image = PhotoImage(
+    file=relative_to_assets("register/discord_heading.png"))
+discord_heading = canvas.create_image(
+    526.0,
+    272.0,
+    image=discord_heading_image
 )
 window.resizable(False, False)
 window.mainloop()
