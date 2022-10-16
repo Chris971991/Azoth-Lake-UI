@@ -47,6 +47,19 @@ image_1 = canvas.create_image(
     image=image_image_1
 )
 
+# ----- Back Button - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    back_button_image = PhotoImage(file=relative_to_assets("reset/back_button-active.png"))
+    back_button.config(image=back_button_image)
+    back_button.image = back_button_image
+
+def on_leave(e):
+    back_button_image = PhotoImage(file=relative_to_assets("reset/back_button.png"))
+    back_button.config(image=back_button_image)
+    back_button.image = back_button_image    
+
+# -- Create the button
 back_button_image = PhotoImage(
     file=relative_to_assets("reset/back_button.png"))
 back_button = Button(
@@ -56,6 +69,8 @@ back_button = Button(
     command=lambda: print("Back Button clicked"),
     relief="flat"
 )
+
+# -- Place the button
 back_button.place(
     x=403.0,
     y=355.0,
@@ -63,6 +78,24 @@ back_button.place(
     height=32.0
 )
 
+# -- Bind the enter + leave events
+back_button.bind("<Enter>", on_enter)
+back_button.bind("<Leave>", on_leave)
+
+
+# ----- Reset Button - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    reset_button_image = PhotoImage(file=relative_to_assets("reset/reset_button-active.png"))
+    reset_button.config(image=reset_button_image)
+    reset_button.image = reset_button_image
+
+def on_leave(e):
+    reset_button_image = PhotoImage(file=relative_to_assets("reset/reset_button.png"))
+    reset_button.config(image=reset_button_image)
+    reset_button.image = reset_button_image    
+
+# -- Create the button
 reset_button_image = PhotoImage(
     file=relative_to_assets("reset/reset_button.png"))
 reset_button = Button(
@@ -72,12 +105,18 @@ reset_button = Button(
     command=lambda: print("Reset Button clicked"),
     relief="flat"
 )
+
+# -- Place the button
 reset_button.place(
     x=293.0,
     y=355.0,
     width=105.0,
     height=32.0
 )
+
+# -- Bind the enter + leave events
+reset_button.bind("<Enter>", on_enter)
+reset_button.bind("<Leave>", on_leave)
 
 # ----- Version + Detection Headings - Text ----- #
 canvas.create_text(
@@ -139,6 +178,7 @@ canvas.create_text(
     font=("Montserrat Regular", 11 * -1)
 )
 
+# ----- Forgot Password Info - Text ----- #
 canvas.create_text(
     230.0,
     331.0,
