@@ -51,20 +51,20 @@ background = canvas.create_image(
 # ----- Register Button - Button ----- #
 # -- Define the mouse enter and leave events
 def on_enter(e):
-    login_register_button_image = PhotoImage(file=relative_to_assets("login/register_button-active.png"))
-    login_register_button.config(image=login_register_button_image)
-    login_register_button.image = login_register_button_image
+    register_button_image = PhotoImage(file=relative_to_assets("login/register_button-active.png"))
+    register_button.config(image=register_button_image)
+    register_button.image = register_button_image
 
 def on_leave(e):
-    login_register_button_image = PhotoImage(file=relative_to_assets("login/register_button.png"))
-    login_register_button.config(image=login_register_button_image)
-    login_register_button.image = login_register_button_image
+    register_button_image = PhotoImage(file=relative_to_assets("login/register_button.png"))
+    register_button.config(image=register_button_image)
+    register_button.image = register_button_image
 
 # -- Create the button
-login_register_button_image = PhotoImage(
+register_button_image = PhotoImage(
     file=relative_to_assets("login/register_button.png"))
-login_register_button = Button(
-    image=login_register_button_image,
+register_button = Button(
+    image=register_button_image,
     cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
@@ -73,7 +73,7 @@ login_register_button = Button(
 )
 
 # -- Place the button
-login_register_button.place(
+register_button.place(
     x=403.0,
     y=322.0,
     width=105.0,
@@ -81,26 +81,26 @@ login_register_button.place(
 )
 
 # -- Bind the enter + leave events
-login_register_button.bind("<Enter>", on_enter)
-login_register_button.bind("<Leave>", on_leave)
+register_button.bind("<Enter>", on_enter)
+register_button.bind("<Leave>", on_leave)
 
 # ----- Login Button - Button ----- #
 # -- Define the mouse enter and leave events
 def on_enter(e):
-    login_login_button_image = PhotoImage(file=relative_to_assets("login/login_button-active.png"))
-    login_login_button.config(image=login_login_button_image)
-    login_login_button.image = login_login_button_image
+    login_button_image = PhotoImage(file=relative_to_assets("login/login_button-active.png"))
+    login_button.config(image=login_button_image)
+    login_button.image = login_button_image
 
 def on_leave(e):
-    login_login_button_image = PhotoImage(file=relative_to_assets("login/login_button.png"))
-    login_login_button.config(image=login_login_button_image)
-    login_login_button.image = login_login_button_image    
+    login_button_image = PhotoImage(file=relative_to_assets("login/login_button.png"))
+    login_button.config(image=login_button_image)
+    login_button.image = login_button_image    
 
 # -- Create the button
-login_login_button_image = PhotoImage(
+login_button_image = PhotoImage(
     file=relative_to_assets("login/login_button.png"))
-login_login_button = Button(
-    image=login_login_button_image,
+login_button = Button(
+    image=login_button_image,
     cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
@@ -109,7 +109,7 @@ login_login_button = Button(
 )
 
 # -- Place the button
-login_login_button.place(
+login_button.place(
     x=293.0,
     y=322.0,
     width=105.0,
@@ -117,26 +117,26 @@ login_login_button.place(
 )
 
 # -- Bind the enter + leave events
-login_login_button.bind("<Enter>", on_enter)
-login_login_button.bind("<Leave>", on_leave)
+login_button.bind("<Enter>", on_enter)
+login_button.bind("<Leave>", on_leave)
 
 # ----- Reset Password - Button ----- #
 # -- Define the mouse enter and leave events
 def on_enter(e):
-    login_reset_button_image = PhotoImage(file=relative_to_assets("login/reset_button-active.png"))
-    login_reset_button.config(image=login_reset_button_image)
-    login_reset_button.image = login_reset_button_image
+    reset_button_image = PhotoImage(file=relative_to_assets("login/reset_button-active.png"))
+    reset_button.config(image=reset_button_image)
+    reset_button.image = reset_button_image
 
 def on_leave(e):
-    login_reset_button_image = PhotoImage(file=relative_to_assets("login/reset_button.png"))
-    login_reset_button.config(image=login_reset_button_image)
-    login_reset_button.image = login_reset_button_image 
+    reset_button_image = PhotoImage(file=relative_to_assets("login/reset_button.png"))
+    reset_button.config(image=reset_button_image)
+    reset_button.image = reset_button_image 
 
 # -- Create the button
-login_reset_button_image = PhotoImage(
+reset_button_image = PhotoImage(
     file=relative_to_assets("login/reset_button.png"))
-login_reset_button = Button(
-    image=login_reset_button_image,
+reset_button = Button(
+    image=reset_button_image,
     cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
@@ -145,7 +145,7 @@ login_reset_button = Button(
 )
 
 # -- Place the button
-login_reset_button.place(
+reset_button.place(
     x=293.0,
     y=361.0,
     width=215.0,
@@ -153,8 +153,8 @@ login_reset_button.place(
 )
 
 # -- Bind the enter + leave events
-login_reset_button.bind("<Enter>", on_enter)
-login_reset_button.bind("<Leave>", on_leave)
+reset_button.bind("<Enter>", on_enter)
+reset_button.bind("<Leave>", on_leave)
 
 # ----- Version + Detection Headings - Text ----- #
 canvas.create_text(
@@ -217,14 +217,14 @@ canvas.create_text(
 )
 
 # ----- Password Input - TextBox ----- #
-login_password_input_image = PhotoImage(
+password_input_image = PhotoImage(
     file=relative_to_assets("login/password_input.png"))
-login_password_input_bg = canvas.create_image(
+password_input_bg = canvas.create_image(
     400.5,
     294.0,
-    image=login_password_input_image
+    image=password_input_image
 )
-login_password_input = Entry(
+password_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -234,7 +234,7 @@ login_password_input = Entry(
     font=("Montserrat Regular", 14 * -1),
     show="*"
 )
-login_password_input.place(
+password_input.place(
     x=298.0,
     y=278.0,
     width=205.0,
@@ -242,14 +242,14 @@ login_password_input.place(
 )
 
 # ----- Username Input - TextBox ----- #
-login_username_input_image = PhotoImage(
+username_input_image = PhotoImage(
     file=relative_to_assets("login/username_input.png"))
-login_username_input_bg = canvas.create_image(
+username_input_bg = canvas.create_image(
     400.5,
     250.0,
-    image=login_username_input_image
+    image=username_input_image
 )
-login_username_input = Entry(
+username_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -258,7 +258,7 @@ login_username_input = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-login_username_input.place(
+username_input.place(
     x=298.0,
     y=234.0,
     width=205.0,
@@ -266,21 +266,21 @@ login_username_input.place(
 )
 
 # ----- Heading - Image ----- #
-login_heading_image = PhotoImage(
+heading_image = PhotoImage(
     file=relative_to_assets("login/heading.png"))
-login_heading = canvas.create_image(
+heading = canvas.create_image(
     399.0,
     191.0,
-    image=login_heading_image
+    image=heading_image
 )
 
 # ----- Logo - Image ----- #
-login_logo_image = PhotoImage(
+logo_image = PhotoImage(
     file=relative_to_assets("login/logo.png"))
-login_logo = canvas.create_image(
+logo = canvas.create_image(
     400.0,
     94.0,
-    image=login_logo_image 
+    image=logo_image 
 )
 window.resizable(False, False)
 window.mainloop()
