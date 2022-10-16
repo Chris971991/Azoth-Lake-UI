@@ -27,7 +27,7 @@ window.configure(bg = "#1E1D22")
 p1 = PhotoImage(file=relative_to_assets("favicon.png"))
 window.iconphoto(False, p1)
 
-
+# ----- Canvas Settings ----- #
 canvas = Canvas(
     window,
     bg = "#1E1D22",
@@ -38,13 +38,14 @@ canvas = Canvas(
     relief = "ridge"
 )
 
+# ----- Canvas Background ----- #
 canvas.place(x = 0, y = 0)
-image_image_1 = PhotoImage(
-    file=relative_to_assets("reset/image_1.png"))
-image_1 = canvas.create_image(
+background_image = PhotoImage(
+    file=relative_to_assets("reset/background.png"))
+background = canvas.create_image(
     400.0,
     200.0,
-    image=image_image_1
+    image=background_image
 )
 
 # ----- Back Button - Button ----- #
@@ -262,36 +263,40 @@ new_password_input.place(
     height=30.0
 )
 
-image_image_2 = PhotoImage(
-    file=relative_to_assets("reset/image_2.png"))
-image_2 = canvas.create_image(
-    397.0,
-    94.0,
-    image=image_image_2
-)
-
-image_image_3 = PhotoImage(
-    file=relative_to_assets("reset/image_3.png"))
-image_3 = canvas.create_image(
+# ----- Main Heading - Image ----- #
+main_heading_image = PhotoImage(
+    file=relative_to_assets("reset/main_heading.png"))
+main_heading = canvas.create_image(
     402.0,
     47.0,
-    image=image_image_3
+    image=main_heading_image
 )
 
-image_image_4 = PhotoImage(
-    file=relative_to_assets("reset/image_4.png"))
-image_4 = canvas.create_image(
+# ----- Username Heading - Image ----- #
+username_heading_image = PhotoImage(
+    file=relative_to_assets("reset/username_heading.png"))
+username_heading = canvas.create_image(
+    397.0,
+    94.0,
+    image=username_heading_image
+)
+
+# ----- Old Password Heading - Image ----- #
+old_password_heading_image = PhotoImage(
+    file=relative_to_assets("reset/old_password_heading.png"))
+old_password_heading = canvas.create_image(
     397.0,
     178.0,
-    image=image_image_4
+    image=old_password_heading_image
 )
 
-image_image_5 = PhotoImage(
-    file=relative_to_assets("reset/image_5.png"))
-image_5 = canvas.create_image(
+# ----- New Password Heading - Image ----- #
+new_password_heading_image = PhotoImage(
+    file=relative_to_assets("reset/new_password_heading.png"))
+new_password_heading = canvas.create_image(
     397.0,
     262.0,
-    image=image_image_5
+    image=new_password_heading_image
 )
 window.resizable(False, False)
 window.mainloop()
