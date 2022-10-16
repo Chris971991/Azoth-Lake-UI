@@ -19,9 +19,13 @@ def relative_to_assets(path: str) -> Path:
 
 
 window = Tk()
-
+window.title("Azoth Lake - v1.6")
 window.geometry("800x400")
 window.configure(bg = "#1E1D22")
+
+# ----- Window Icon ----- #
+p1 = PhotoImage(file=relative_to_assets("favicon.png"))
+window.iconphoto(False, p1)
 
 
 canvas = Canvas(
@@ -75,40 +79,73 @@ reset_button.place(
     height=32.0
 )
 
-canvas.create_text(
-    621.0,
-    380.0,
-    anchor="nw",
-    text="Discord Server - vwWJCFkK6a",
-    fill="#D5D5D5",
-    font=("MontserratRoman Regular", 11 * -1)
-)
-
-canvas.create_text(
-    621.0,
-    368.0,
-    anchor="nw",
-    text="Discord User - AzothLake#0261",
-    fill="#D5D5D5",
-    font=("MontserratRoman Regular", 11 * -1)
-)
-
+# ----- Version + Detection Headings - Text ----- #
 canvas.create_text(
     5.0,
-    380.0,
+    370.0,
     anchor="nw",
-    text="Detection Status - Undetected",
-    fill="#FFFFFF",
-    font=("MontserratRoman Regular", 11 * -1)
+    text="Client Version - \nDetection Status -",
+    fill="#D5D5D5",
+    font=("Montserrat Regular", 11 * -1)
+)
+
+# ----- Version Status - Text ----- #
+canvas.create_text(
+    90.0,
+    370.0,
+    anchor="nw",
+    text="Updated",
+    fill="#24FF00",
+    font=("Montserrat Regular", 11 * -1)
+)
+
+# ----- Detection Status - Text ----- #
+canvas.create_text(
+    105.0,
+    385.0,
+    anchor="nw",
+    text="Undetected",
+    fill="#24FF00",
+    font=("Montserrat Regular", 11 * -1)
+)
+
+# ----- Discord Details - Text ----- #
+canvas.create_text(
+    715.0,
+    370.0,
+    anchor="ne",
+    text="Discord User - \nDiscord Server - ",
+    fill="#D5D5D5",
+    font=("Montserrat Regular", 11 * -1)
+)
+
+# ----- Program Creator Discord - Text ----- #
+canvas.create_text(
+    795.0,
+    370.0,
+    anchor="ne",
+    text="AzothLake#0261",
+    fill="#24FF00",
+    font=("Montserrat Regular", 11 * -1)
+)
+
+# ----- Discord Server Link - Text ----- #
+canvas.create_text(
+    795.0,
+    385.0,
+    anchor="ne",
+    text="vwWJCFkK6a",
+    fill="#24FF00",
+    font=("Montserrat Regular", 11 * -1)
 )
 
 canvas.create_text(
-    5.0,
-    368.0,
+    230.0,
+    331.0,
     anchor="nw",
-    text="Client Version - Updated",
+    text="If you forgot your password, create a ticket in the Discord Server",
     fill="#D5D5D5",
-    font=("MontserratRoman Regular", 11 * -1)
+    font=("Montserrat Regular", 11 * -1)
 )
 
 entry_image_1 = PhotoImage(
@@ -121,7 +158,11 @@ entry_bg_1 = canvas.create_image(
 entry_1 = Entry(
     bd=0,
     bg="#28272E",
-    highlightthickness=0
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1)
 )
 entry_1.place(
     x=296.0,
@@ -140,7 +181,12 @@ entry_bg_2 = canvas.create_image(
 entry_2 = Entry(
     bd=0,
     bg="#28272E",
-    highlightthickness=0
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1),
+    show="*"
 )
 entry_2.place(
     x=295.0,
@@ -159,7 +205,12 @@ entry_bg_3 = canvas.create_image(
 entry_3 = Entry(
     bd=0,
     bg="#28272E",
-    highlightthickness=0
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1),
+    show="*"
 )
 entry_3.place(
     x=296.0,
