@@ -181,7 +181,7 @@ canvas.create_text(
 
 # ----- Username - TextBox ----- #
 username_input_image = PhotoImage(
-    file=relative_to_assets("register/username_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 username_input_bg = canvas.create_image(
     275.5,
     140.0,
@@ -205,7 +205,7 @@ username_input.place(
 
 # ----- Password - TextBox ----- #
 password_input_image = PhotoImage(
-    file=relative_to_assets("register/password_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 password_input_bg = canvas.create_image(
     527.5,
     140.0,
@@ -230,7 +230,7 @@ password_input.place(
 
 # ----- First Name - TextBox ----- #
 firstname_input_image = PhotoImage(
-    file=relative_to_assets("register/firstname_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 firstname_input_bg = canvas.create_image(
     274.5,
     225.0,
@@ -254,7 +254,7 @@ firstname_input.place(
 
 # ----- Last Name - TextBox ----- #
 lastname_input_image = PhotoImage(
-    file=relative_to_assets("register/lastname_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 lastname_input_bg = canvas.create_image(
     526.5,
     225.0,
@@ -278,7 +278,7 @@ lastname_input.place(
 
 # ----- E-mail - TextBox ----- #
 email_input_image = PhotoImage(
-    file=relative_to_assets("register/email_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 email_input_bg = canvas.create_image(
     274.5,
     305.0,
@@ -302,7 +302,7 @@ email_input.place(
 
 # ----- Discord Name - TextBox ----- #
 discord_input_image = PhotoImage(
-    file=relative_to_assets("register/discord_input.png"))
+    file=relative_to_assets("register/textbox_background.png"))
 discord_input_bg = canvas.create_image(
     526.5,
     305.0,

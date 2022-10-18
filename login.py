@@ -218,7 +218,7 @@ canvas.create_text(
 
 # ----- Username Input - TextBox ----- #
 username_input_image = PhotoImage(
-    file=relative_to_assets("login/username_input.png"))
+    file=relative_to_assets("login/textbox_background.png"))
 username_input_bg = canvas.create_image(
     400.5,
     250.0,
@@ -243,7 +243,7 @@ username_input.place(
 
 # ----- Password Input - TextBox ----- #
 password_input_image = PhotoImage(
-    file=relative_to_assets("login/password_input.png"))
+    file=relative_to_assets("login/textbox_background.png"))
 password_input_bg = canvas.create_image(
     400.5,
     294.0,

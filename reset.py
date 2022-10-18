@@ -191,7 +191,7 @@ canvas.create_text(
 
 # ----- Username Input - TextBox ----- #
 username_input_image = PhotoImage(
-    file=relative_to_assets("reset/username_input.png"))
+    file=relative_to_assets("reset/textbox_background.png"))
 username_input_bg = canvas.create_image(
     398.5,
     135.0,
@@ -215,7 +215,7 @@ username_input.place(
 
 # ----- Old Password Input - TextBox ----- #
 old_password_input_image = PhotoImage(
-    file=relative_to_assets("reset/old_password_input.png"))
+    file=relative_to_assets("reset/textbox_background.png"))
 old_password_input_bg = canvas.create_image(
     397.5,
     220.0,
@@ -240,7 +240,7 @@ old_password_input.place(
 
 # ----- New Password Input - TextBox ----- #
 new_password_input_image = PhotoImage(
-    file=relative_to_assets("reset/new_password_input.png"))
+    file=relative_to_assets("reset/textbox_background.png"))
 new_password_input_bg = canvas.create_image(
     398.5,
     305.0,
