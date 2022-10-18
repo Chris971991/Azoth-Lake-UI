@@ -7,7 +7,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -17,11 +17,14 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-
 window = Tk()
 window.title("Azoth Lake - v1.6")
 window.geometry("800x400")
 window.configure(bg = "#1E1D22")
+
+# ----- Change the ttk style so that ComboBoxes can be modified ----- #
+style = ttk.Style()
+style.theme_use('alt')
 
 # ----- Window Icon ----- #
 p1 = PhotoImage(file=relative_to_assets("favicon.png"))
@@ -127,6 +130,7 @@ canvas.create_text(
     fill="#24FF00",
     font=("Montserrat Regular", 11 * -1)
 )
+
 image_image_2 = PhotoImage(
     file=relative_to_assets("fishingbot/image_2.png"))
 image_2 = canvas.create_image(
@@ -384,21 +388,20 @@ entry_bg_7 = canvas.create_image(
     107.5,
     image=entry_image_7
 )
-entry_7 = Entry(
-    bd=0,
-    bg="#28272E",
-    highlightthickness=0,
-    fg="#d5d5d5",
-    insertbackground="#d5d5d5",
-    justify='center',
-    font=("Montserrat Regular", 14 * -1)
-)
-entry_7.place(
-    x=218.0,
-    y=95.0,
-    width=94.0,
-    height=23.0
-)
+
+# ----- Bait Input - ComboBox ----- #
+# -- Define the custom styling for the bait combobox
+style.map('custom.TCombobox', fieldbackground=[('readonly','#28272E')], foreground=[('readonly','#D5D5D5')], 
+selectbackground=[('readonly','#28272E')], background=[('readonly','#28272E')], arrowcolor=[('readonly','#28272E')], 
+arrowsize=[('readonly','-1')])
+
+# -- List items for the bait combobox
+baits = ["No Bait", "Oytser Bait", "Clam Bait", "Meat Bait", "Firefly Bait", "Woodlouse Bait", "Bread Bait", 
+"Electric Eel Bait", "Snail Bait", "Fish Bait", "Glowworm Bait", "Nightcrawler Bait", "Cheese bait"]
+bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 8", style='custom.TCombobox')
+bait_list_combo.set("Choose a bait")
+bait_list_combo.place(x=214, y=98, width=103)
+
 
 image_image_10 = PhotoImage(
     file=relative_to_assets("fishingbot/image_10.png"))
