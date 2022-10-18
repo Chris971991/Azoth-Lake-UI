@@ -8,6 +8,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from turtle import width
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -271,5 +272,67 @@ gathering_heading = canvas.create_image(
     105.0,
     image=gathering_heading_image
 )
+
+# ----- Serial Key Input - Textbox ----- #
+serial_input_image = PhotoImage(
+    file=relative_to_assets("botselection/textbox_background.png"))
+serial_input = canvas.create_image(
+    340.0,
+    333.5,
+    image=serial_input_image
+)
+serial_input = Entry(
+    bd=0,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1)
+)
+serial_input.place(
+    x=263.0,
+    y=322.0,
+    width=150.0,
+    height=23.0
+)
+
+serial_input.insert(0, "Enter Serial Key")
+
+# ----- Submit Serial Key - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    submit_button_image = PhotoImage(file=relative_to_assets("botselection/submit_button-active.png"))
+    submit_button.config(image=submit_button_image)
+    submit_button.image = submit_button_image
+
+def on_leave(e):
+    submit_button_image = PhotoImage(file=relative_to_assets("botselection/submit_button.png"))
+    submit_button.config(image=submit_button_image)
+    submit_button.image = submit_button_image 
+
+# -- Create the button
+submit_button_image = PhotoImage(
+    file=relative_to_assets("botselection/submit_button.png"))
+submit_button = Button(
+    image=submit_button_image,
+    cursor="hand2",
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("Submit Button clicked"),
+    relief="flat"
+)
+
+# -- Place the button
+submit_button.place(
+    x=439.0,
+    y=322.0,
+    width=105.0,
+    height=25.0
+)
+
+# -- Bind the enter + leave events
+submit_button.bind("<Enter>", on_enter)
+submit_button.bind("<Leave>", on_leave)
 window.resizable(False, False)
 window.mainloop()
