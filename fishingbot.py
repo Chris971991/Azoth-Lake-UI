@@ -305,7 +305,7 @@ logout_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/logout_heading.png"))
 logout_heading = canvas.create_image(
     467.0,
-    224.0,
+    228.0,
     image=logout_heading_image
 )
 
@@ -313,7 +313,7 @@ image_image_4 = PhotoImage(
     file=relative_to_assets("fishingbot/image_4.png"))
 image_4 = canvas.create_image(
     332.0,
-    224.0,
+    228.0,
     image=image_image_4
 )
 
