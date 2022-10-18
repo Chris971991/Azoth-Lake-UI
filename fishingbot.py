@@ -7,7 +7,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk, Scale
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -398,9 +398,9 @@ arrowsize=[('readonly','-1')])
 # -- List items for the bait combobox
 baits = ["No Bait", "Oytser Bait", "Clam Bait", "Meat Bait", "Firefly Bait", "Woodlouse Bait", "Bread Bait", 
 "Electric Eel Bait", "Snail Bait", "Fish Bait", "Glowworm Bait", "Nightcrawler Bait", "Cheese bait"]
-bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 8", style='custom.TCombobox')
+bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 8", style='custom.TCombobox', cursor="hand2")
 bait_list_combo.set("Choose a bait")
-bait_list_combo.place(x=214, y=98, width=103)
+bait_list_combo.place(x=214, y=98, width=105)
 
 
 image_image_10 = PhotoImage(
@@ -410,6 +410,12 @@ image_10 = canvas.create_image(
     72.0,
     image=image_image_10
 )
+
+# ----- Casting Power Input - Scale ----- #
+cast_power_input=Scale(window, from_=10, to=0, sliderrelief='flat', highlightthickness=0, 
+background='#28272E', fg='#D5D5D5', troughcolor='#68676C', activebackground='#D5D5D5', font="Montserrat 11", 
+cursor="hand2")
+cast_power_input.place(x=130, y=85, width=38, height=280)
 
 image_image_11 = PhotoImage(
     file=relative_to_assets("fishingbot/image_11.png"))
