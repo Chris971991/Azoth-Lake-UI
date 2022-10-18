@@ -43,12 +43,12 @@ canvas = Canvas(
 
 # ----- Canvas Background ----- #
 canvas.place(x = 0, y = 0)
-image_image_1 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_1.png"))
-image_1 = canvas.create_image(
+background_image = PhotoImage(
+    file=relative_to_assets("fishingbot/background.png"))
+background = canvas.create_image(
     400.0,
     200.0,
-    image=image_image_1
+    image=background_image
 )
 
 # ----- Version + Detection Headings - Text ----- #
@@ -131,20 +131,22 @@ canvas.create_text(
     font=("Montserrat Regular", 11 * -1)
 )
 
-image_image_2 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_2.png"))
-image_2 = canvas.create_image(
+# ----- Instructions - Image ----- #
+instructions_image = PhotoImage(
+    file=relative_to_assets("fishingbot/instructions.png"))
+instructions = canvas.create_image(
     708.0,
     228.0,
-    image=image_image_2
+    image=instructions_image
 )
 
-image_image_3 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_3.png"))
-image_3 = canvas.create_image(
+# ----- Instructions Heading - Image ----- #
+instructions_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/instructions_heading.png"))
+instructions_heading = canvas.create_image(
     709.0,
     72.0,
-    image=image_image_3
+    image=instructions_heading_image
 )
 
 # ----- Bot Selection/Back Button - Button ----- #
@@ -255,14 +257,15 @@ update_button.place(
 update_button.bind("<Enter>", on_enter)
 update_button.bind("<Leave>", on_leave)
 
-entry_image_0 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_1.png"))
-entry_bg_0 = canvas.create_image(
+# ----- Logout Input - Textbox ----- #
+logout_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+logout_input = canvas.create_image(
     467.0,
     263.5,
-    image=entry_image_0
+    image=logout_input_image
 )
-entry_0 = Entry(
+logout_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -271,21 +274,22 @@ entry_0 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_0.place(
+logout_input.place(
     x=420.0,
     y=251.0,
     width=94.0,
     height=23.0
 )
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_1.png"))
-entry_bg_1 = canvas.create_image(
+# ----- Repair Key Input - Textbox ----- #
+repair_key_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+repair_key_input_bg = canvas.create_image(
     333.0,
     263.5,
-    image=entry_image_1
+    image=repair_key_input_image
 )
-entry_1 = Entry(
+repair_key_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -294,13 +298,14 @@ entry_1 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_1.place(
+repair_key_input.place(
     x=286.0,
     y=251.0,
     width=94.0,
     height=23.0
 )
 
+# ----- Logout Heading - Image ----- #
 logout_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/logout_heading.png"))
 logout_heading = canvas.create_image(
@@ -309,22 +314,24 @@ logout_heading = canvas.create_image(
     image=logout_heading_image
 )
 
-image_image_4 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_4.png"))
-image_4 = canvas.create_image(
+# ----- Repair Key Heading - Image ----- #
+repairkey_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/repairkey_heading.png"))
+repairkey_heading = canvas.create_image(
     332.0,
     228.0,
-    image=image_image_4
+    image=repairkey_heading_image
 )
 
-entry_image_2 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_2.png"))
-entry_bg_2 = canvas.create_image(
+# ----- AFK Input - Textbox ----- #
+afk_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+afk_input_bg = canvas.create_image(
     534.0,
     185.5,
-    image=entry_image_2
+    image=afk_input_image
 )
-entry_2 = Entry(
+afk_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -333,29 +340,31 @@ entry_2 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_2.place(
+afk_input.place(
     x=487.0,
     y=173.0,
     width=94.0,
     height=23.0
 )
 
-image_image_5 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_5.png"))
-image_5 = canvas.create_image(
+# ----- AFK Heading - Image ----- #
+afk_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/afk_heading.png"))
+afk_heading = canvas.create_image(
     534.0,
     146.0,
-    image=image_image_5
+    image=afk_heading_image
 )
 
-entry_image_3 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_3.png"))
-entry_bg_3 = canvas.create_image(
+# ----- Inventory Input - Textbox ----- #
+inventory_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+inventory_input_bg = canvas.create_image(
     400.0,
     185.5,
-    image=entry_image_3
+    image=inventory_input_image
 )
-entry_3 = Entry(
+inventory_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -364,29 +373,31 @@ entry_3 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_3.place(
+inventory_input.place(
     x=353.0,
     y=173.0,
     width=94.0,
     height=23.0
 )
 
-image_image_6 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_6.png"))
-image_6 = canvas.create_image(
+# ----- Inventory Heading - Image ----- #
+inventory_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/inventory_heading.png"))
+inventory_heading = canvas.create_image(
     399.0,
     146.0,
-    image=image_image_6
+    image=inventory_heading_image
 )
 
-entry_image_4 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_4.png"))
-entry_bg_4 = canvas.create_image(
+# ----- Repair Input - Textbox ----- #
+repair_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+repair_input_bg = canvas.create_image(
     266.0,
     185.5,
-    image=entry_image_4
+    image=repair_input_image
 )
-entry_4 = Entry(
+repair_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -395,29 +406,31 @@ entry_4 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_4.place(
+repair_input.place(
     x=219.0,
     y=173.0,
     width=94.0,
     height=23.0
 )
 
-image_image_7 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_7.png"))
-image_7 = canvas.create_image(
+# ----- Repair Heading - Image ----- #
+repair_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/repair_heading.png"))
+repair_heading = canvas.create_image(
     265.0,
     146.0,
-    image=image_image_7
+    image=repair_heading_image
 )
 
-entry_image_5 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_5.png"))
-entry_bg_5 = canvas.create_image(
+# ----- Pole Input - Textbox ----- #
+pole_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+pole_input_bg = canvas.create_image(
     534.0,
     107.5,
-    image=entry_image_5
+    image=pole_input_image
 )
-entry_5 = Entry(
+pole_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -426,29 +439,31 @@ entry_5 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_5.place(
+pole_input.place(
     x=487.0,
     y=95.0,
     width=94.0,
     height=23.0
 )
 
-image_image_8 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_8.png"))
-image_8 = canvas.create_image(
+# ----- Pole Heading - Image ----- #
+pole_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/pole_heading.png"))
+pole_heading = canvas.create_image(
     534.0,
     72.0,
-    image=image_image_8
+    image=pole_input_image
 )
 
-entry_image_6 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_6.png"))
-entry_bg_6 = canvas.create_image(
+# ----- Freecam Input - Textbox ----- #
+freecam_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+freecam_input_bg = canvas.create_image(
     400.0,
     107.5,
-    image=entry_image_6
+    image=freecam_input_image
 )
-entry_6 = Entry(
+freecam_input = Entry(
     bd=0,
     bg="#28272E",
     highlightthickness=0,
@@ -457,27 +472,29 @@ entry_6 = Entry(
     justify='center',
     font=("Montserrat Regular", 14 * -1)
 )
-entry_6.place(
+freecam_input.place(
     x=353.0,
     y=95.0,
     width=94.0,
     height=23.0
 )
 
-image_image_9 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_9.png"))
-image_9 = canvas.create_image(
+# ----- Freecam Heading - Image ----- #
+freecam_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/freecam_heading.png"))
+freecam_heading = canvas.create_image(
     400.0,
     72.0,
-    image=image_image_9
+    image=freecam_heading_image
 )
 
-entry_image_7 = PhotoImage(
-    file=relative_to_assets("fishingbot/entry_7.png"))
-entry_bg_7 = canvas.create_image(
+# ----- Bait Input Background - Image ----- #
+bait_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/textbox_background.png"))
+bait_input_bg = canvas.create_image(
     265.0,
     107.5,
-    image=entry_image_7
+    image=bait_input_image
 )
 
 # ----- Bait Input - ComboBox ----- #
@@ -493,13 +510,13 @@ bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Mon
 bait_list_combo.set("Choose a bait")
 bait_list_combo.place(x=209, y=96, width=110)
 
-
-image_image_10 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_10.png"))
-image_10 = canvas.create_image(
+# ----- Bait Heading - Image ----- #
+bait_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/bait_heading.png"))
+bait_heading = canvas.create_image(
     265.0,
     72.0,
-    image=image_image_10
+    image=bait_heading_image
 )
 
 # ----- Casting Power Input - Scale ----- #
@@ -508,28 +525,31 @@ background='#28272E', fg='#D5D5D5', troughcolor='#68676C', activebackground='#D5
 cursor="hand2")
 cast_power_input.place(x=130, y=85, width=38, height=280)
 
-image_image_11 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_11.png"))
-image_11 = canvas.create_image(
+# ----- Casting Power Example - Image ----- #
+casting_power_image = PhotoImage(
+    file=relative_to_assets("fishingbot/casting_power.png"))
+casting_power = canvas.create_image(
     58.0,
     228.0,
-    image=image_image_11
+    image=casting_power_image
 )
 
-image_image_12 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_12.png"))
-image_12 = canvas.create_image(
+# ----- Casting Power Heading - Image ----- #
+casting_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/casting_heading.png"))
+casting_heading = canvas.create_image(
     83.0,
     75.0,
-    image=image_image_12
+    image=casting_heading_image
 )
 
-image_image_13 = PhotoImage(
-    file=relative_to_assets("fishingbot/image_13.png"))
-image_13 = canvas.create_image(
+# ----- Main Heading - Image ----- #
+main_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/main_heading.png"))
+main_heading = canvas.create_image(
     400.0,
     32.0,
-    image=image_image_13
+    image=main_heading_image
 )
 
 window.resizable(False, False)
