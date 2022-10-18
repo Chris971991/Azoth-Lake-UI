@@ -147,58 +147,141 @@ image_3 = canvas.create_image(
     image=image_image_3
 )
 
-button_image_1 = PhotoImage(
-    file=relative_to_assets("fishingbot/button_1.png"))
-button_1 = Button(
-    image=button_image_1,
+# ----- Bot Selection/Back Button - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    selection_button_image = PhotoImage(file=relative_to_assets("fishingbot/selection_button-active.png"))
+    selection_button.config(image=selection_button_image)
+    selection_button.image = selection_button_image
+
+def on_leave(e):
+    selection_button_image = PhotoImage(file=relative_to_assets("fishingbot/selection_button.png"))
+    selection_button.config(image=selection_button_image)
+    selection_button.image = selection_button_image
+
+# -- Create the button
+selection_button_image = PhotoImage(
+    file=relative_to_assets("fishingbot/selection_button.png"))
+selection_button = Button(
+    image=selection_button_image,
+    cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=lambda: print("Bot Selection clicked"),
     relief="flat"
 )
-button_1.place(
+
+# -- Place the button
+selection_button.place(
     x=408.0,
     y=295.0,
     width=135.0,
     height=32.0
 )
 
-button_image_2 = PhotoImage(
-    file=relative_to_assets("fishingbot/button_2.png"))
-button_2 = Button(
-    image=button_image_2,
+# -- Bind the enter + leave events
+selection_button.bind("<Enter>", on_enter)
+selection_button.bind("<Leave>", on_leave)
+
+# ----- Start Bot Button - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    start_button_image = PhotoImage(file=relative_to_assets("fishingbot/start_button-active.png"))
+    start_button.config(image=start_button_image)
+    start_button.image = start_button_image
+
+def on_leave(e):
+    start_button_image = PhotoImage(file=relative_to_assets("fishingbot/start_button.png"))
+    start_button.config(image=start_button_image)
+    start_button.image = start_button_image
+
+# -- Create the button
+start_button_image = PhotoImage(
+    file=relative_to_assets("fishingbot/start_button.png"))
+start_button = Button(
+    image=start_button_image,
+    cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=lambda: print("Start Button clicked"),
     relief="flat"
 )
-button_2.place(
+
+# -- Place the button
+start_button.place(
     x=332.0,
     y=336.0,
     width=135.0,
     height=32.0
 )
 
-button_image_3 = PhotoImage(
-    file=relative_to_assets("fishingbot/button_3.png"))
-button_3 = Button(
-    image=button_image_3,
+# -- Bind the enter + leave events
+start_button.bind("<Enter>", on_enter)
+start_button.bind("<Leave>", on_leave)
+
+# ----- Update Bot Button - Button ----- #
+# -- Define the mouse enter and leave events
+def on_enter(e):
+    update_button_image = PhotoImage(file=relative_to_assets("fishingbot/update_button-active.png"))
+    update_button.config(image=update_button_image)
+    update_button.image = update_button_image
+
+def on_leave(e):
+    update_button_image = PhotoImage(file=relative_to_assets("fishingbot/update_button.png"))
+    update_button.config(image=update_button_image)
+    update_button.image = update_button_image
+
+# -- Create the button
+update_button_image = PhotoImage(
+    file=relative_to_assets("fishingbot/update_button.png"))
+update_button = Button(
+    image=update_button_image,
+    cursor="hand2",
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
+    command=lambda: print("Update Button clicked"),
     relief="flat"
 )
-button_3.place(
+
+# -- Place the button
+update_button.place(
     x=256.0,
     y=295.0,
     width=135.0,
     height=32.0
 )
 
+# -- Bind the enter + leave events
+update_button.bind("<Enter>", on_enter)
+update_button.bind("<Leave>", on_leave)
+
+entry_image_0 = PhotoImage(
+    file=relative_to_assets("fishingbot/entry_1.png"))
+entry_bg_0 = canvas.create_image(
+    467.0,
+    263.5,
+    image=entry_image_0
+)
+entry_0 = Entry(
+    bd=0,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#d5d5d5",
+    insertbackground="#d5d5d5",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1)
+)
+entry_0.place(
+    x=420.0,
+    y=251.0,
+    width=94.0,
+    height=23.0
+)
+
 entry_image_1 = PhotoImage(
     file=relative_to_assets("fishingbot/entry_1.png"))
 entry_bg_1 = canvas.create_image(
-    400.0,
+    333.0,
     263.5,
     image=entry_image_1
 )
@@ -212,16 +295,24 @@ entry_1 = Entry(
     font=("Montserrat Regular", 14 * -1)
 )
 entry_1.place(
-    x=353.0,
+    x=286.0,
     y=251.0,
     width=94.0,
     height=23.0
 )
 
+logout_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/logout_heading.png"))
+logout_heading = canvas.create_image(
+    467.0,
+    224.0,
+    image=logout_heading_image
+)
+
 image_image_4 = PhotoImage(
     file=relative_to_assets("fishingbot/image_4.png"))
 image_4 = canvas.create_image(
-    399.0,
+    332.0,
     224.0,
     image=image_image_4
 )
@@ -398,9 +489,9 @@ arrowsize=[('readonly','-1')])
 # -- List items for the bait combobox
 baits = ["No Bait", "Oytser Bait", "Clam Bait", "Meat Bait", "Firefly Bait", "Woodlouse Bait", "Bread Bait", 
 "Electric Eel Bait", "Snail Bait", "Fish Bait", "Glowworm Bait", "Nightcrawler Bait", "Cheese bait"]
-bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 8", style='custom.TCombobox', cursor="hand2")
+bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 10", style='custom.TCombobox', cursor="hand2")
 bait_list_combo.set("Choose a bait")
-bait_list_combo.place(x=214, y=98, width=105)
+bait_list_combo.place(x=209, y=96, width=110)
 
 
 image_image_10 = PhotoImage(
@@ -413,7 +504,7 @@ image_10 = canvas.create_image(
 
 # ----- Casting Power Input - Scale ----- #
 cast_power_input=Scale(window, from_=10, to=0, sliderrelief='flat', highlightthickness=0, 
-background='#28272E', fg='#D5D5D5', troughcolor='#68676C', activebackground='#D5D5D5', font="Montserrat 11", 
+background='#28272E', fg='#D5D5D5', troughcolor='#68676C', activebackground='#D5D5D5', font="Montserrat 10", 
 cursor="hand2")
 cast_power_input.place(x=130, y=85, width=38, height=280)
 
