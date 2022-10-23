@@ -3,11 +3,12 @@
 # https://github.com/ParthJadhav/Tkinter-Designer
 
 
+from cProfile import label
 from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, ttk, Scale
+from tkinter import DISABLED, Tk, Canvas, Entry, Text, Button, PhotoImage, ttk, Scale, Label, StringVar, IntVar
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -175,8 +176,8 @@ selection_button = Button(
 
 # -- Place the button
 selection_button.place(
-    x=408.0,
-    y=295.0,
+    x=473.0,
+    y=336.0,
     width=135.0,
     height=32.0
 )
@@ -247,8 +248,8 @@ update_button = Button(
 
 # -- Place the button
 update_button.place(
-    x=256.0,
-    y=295.0,
+    x=190.0,
+    y=336.0,
     width=135.0,
     height=32.0
 )
@@ -257,12 +258,110 @@ update_button.place(
 update_button.bind("<Enter>", on_enter)
 update_button.bind("<Leave>", on_leave)
 
+# ----- Total Fish Caught Metric - Label ----- #
+Total_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/metric_background.png"))
+Total_input = canvas.create_image(
+    550.0,
+    305.5,
+    image=Total_input_image
+)
+
+# --- Declare the session fish counter variable
+Total_fish = IntVar()
+
+# --- Label/Text settings and output for the Total Fish Integer Variable
+Total_input = Label(
+    window,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#ccb377",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1),
+    textvariable=Total_fish
+)
+
+# --- Place the label
+Total_input.place(
+    x=518.0,
+    y=293.0,
+    width=60.0,
+    height=23.0
+)
+
+# ----- Total Fish Caught Heading - Image ----- #
+total_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/total_heading.png"))
+total_heading = canvas.create_image(
+    470.0,
+    310.0,
+    image=total_heading_image
+)
+
+# ----- Session Fish Caught Metric - Label ----- #
+session_input_image = PhotoImage(
+    file=relative_to_assets("fishingbot/metric_background.png"))
+session_input = canvas.create_image(
+    355.0,
+    305.5,
+    image=session_input_image
+)
+
+# --- Declare the session fish counter variable
+session_fish = IntVar()
+
+# --- Label/Text settings and output for the Session Fish Integer Variable
+session_input = Label(
+    window,
+    bg="#28272E",
+    highlightthickness=0,
+    fg="#ccb377",
+    justify='center',
+    font=("Montserrat Regular", 14 * -1),
+    textvariable=session_fish
+)
+
+# --- Place the label
+session_input.place(
+    x=323.0,
+    y=293.0,
+    width=60.0,
+    height=23.0
+)
+
+# ----- Session Fish Caught Heading - Image ----- #
+session_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/session_heading.png"))
+session_heading = canvas.create_image(
+    270.0,
+    310.0,
+    image=session_heading_image
+)
+
+# ----- Performance Heading - Image ----- #
+performance_heading_image = PhotoImage(
+    file=relative_to_assets("fishingbot/performance_heading.png"))
+performance_heading = canvas.create_image(
+    400.0,
+    280.0,
+    image=performance_heading_image
+)
+
+# ----- Divider - Image ----- #
+divider_image = PhotoImage(
+    file=relative_to_assets("fishingbot/divider.png"))
+divider = canvas.create_image(
+    400.0,
+    260.0,
+    image=divider_image
+)
+
 # ----- Logout Input - Textbox ----- #
 logout_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 logout_input = canvas.create_image(
     467.0,
-    263.5,
+    240.5,
     image=logout_input_image
 )
 logout_input = Entry(
@@ -276,7 +375,7 @@ logout_input = Entry(
 )
 logout_input.place(
     x=420.0,
-    y=251.0,
+    y=230.0,
     width=94.0,
     height=23.0
 )
@@ -286,7 +385,7 @@ repair_key_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 repair_key_input_bg = canvas.create_image(
     333.0,
-    263.5,
+    240.5,
     image=repair_key_input_image
 )
 repair_key_input = Entry(
@@ -300,7 +399,7 @@ repair_key_input = Entry(
 )
 repair_key_input.place(
     x=286.0,
-    y=251.0,
+    y=230.0,
     width=94.0,
     height=23.0
 )
@@ -310,7 +409,7 @@ logout_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/logout_heading.png"))
 logout_heading = canvas.create_image(
     467.0,
-    228.0,
+    210.0,
     image=logout_heading_image
 )
 
@@ -319,7 +418,7 @@ repairkey_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/repairkey_heading.png"))
 repairkey_heading = canvas.create_image(
     332.0,
-    228.0,
+    210.0,
     image=repairkey_heading_image
 )
 
@@ -328,7 +427,7 @@ afk_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 afk_input_bg = canvas.create_image(
     534.0,
-    185.5,
+    170.5,
     image=afk_input_image
 )
 afk_input = Entry(
@@ -342,7 +441,7 @@ afk_input = Entry(
 )
 afk_input.place(
     x=487.0,
-    y=173.0,
+    y=158.0,
     width=94.0,
     height=23.0
 )
@@ -352,7 +451,7 @@ afk_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/afk_heading.png"))
 afk_heading = canvas.create_image(
     534.0,
-    146.0,
+    140.0,
     image=afk_heading_image
 )
 
@@ -361,7 +460,7 @@ inventory_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 inventory_input_bg = canvas.create_image(
     400.0,
-    185.5,
+    170.5,
     image=inventory_input_image
 )
 inventory_input = Entry(
@@ -375,7 +474,7 @@ inventory_input = Entry(
 )
 inventory_input.place(
     x=353.0,
-    y=173.0,
+    y=158.0,
     width=94.0,
     height=23.0
 )
@@ -385,7 +484,7 @@ inventory_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/inventory_heading.png"))
 inventory_heading = canvas.create_image(
     399.0,
-    146.0,
+    140.0,
     image=inventory_heading_image
 )
 
@@ -394,7 +493,7 @@ repair_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 repair_input_bg = canvas.create_image(
     266.0,
-    185.5,
+    170.5,
     image=repair_input_image
 )
 repair_input = Entry(
@@ -408,7 +507,7 @@ repair_input = Entry(
 )
 repair_input.place(
     x=219.0,
-    y=173.0,
+    y=158.0,
     width=94.0,
     height=23.0
 )
@@ -418,7 +517,7 @@ repair_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/repair_heading.png"))
 repair_heading = canvas.create_image(
     265.0,
-    146.0,
+    140.0,
     image=repair_heading_image
 )
 
@@ -427,7 +526,7 @@ pole_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 pole_input_bg = canvas.create_image(
     534.0,
-    107.5,
+    100.5,
     image=pole_input_image
 )
 pole_input = Entry(
@@ -441,7 +540,7 @@ pole_input = Entry(
 )
 pole_input.place(
     x=487.0,
-    y=95.0,
+    y=88.0,
     width=94.0,
     height=23.0
 )
@@ -460,7 +559,7 @@ freecam_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 freecam_input_bg = canvas.create_image(
     400.0,
-    107.5,
+    100.5,
     image=freecam_input_image
 )
 freecam_input = Entry(
@@ -474,7 +573,7 @@ freecam_input = Entry(
 )
 freecam_input.place(
     x=353.0,
-    y=95.0,
+    y=88.0,
     width=94.0,
     height=23.0
 )
@@ -493,7 +592,7 @@ bait_input_image = PhotoImage(
     file=relative_to_assets("fishingbot/textbox_background.png"))
 bait_input_bg = canvas.create_image(
     265.0,
-    107.5,
+    100.5,
     image=bait_input_image
 )
 
@@ -508,7 +607,7 @@ baits = ["No Bait", "Oytser Bait", "Clam Bait", "Meat Bait", "Firefly Bait", "Wo
 "Electric Eel Bait", "Snail Bait", "Fish Bait", "Glowworm Bait", "Nightcrawler Bait", "Cheese bait"]
 bait_list_combo = ttk.Combobox(window, values=baits, state="readonly", font="Montserrat 10", style='custom.TCombobox', cursor="hand2")
 bait_list_combo.set("Choose a bait")
-bait_list_combo.place(x=209, y=96, width=110)
+bait_list_combo.place(x=209, y=89, width=110)
 
 # ----- Bait Heading - Image ----- #
 bait_heading_image = PhotoImage(
