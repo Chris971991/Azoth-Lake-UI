@@ -546,12 +546,12 @@ pole_input.place(
 )
 
 # ----- Pole Heading - Image ----- #
-pole_input_image = PhotoImage(
+pole_heading_image = PhotoImage(
     file=relative_to_assets("fishingbot/pole_heading.png"))
 pole_heading = canvas.create_image(
     534.0,
     72.0,
-    image=pole_input_image
+    image=pole_heading_image
 )
 
 # ----- Freecam Input - Textbox ----- #
